@@ -1,0 +1,9 @@
+POST http://localhost:8080/api/project/create
+Content-Type: application/json
+
+{
+  "name": "test22",
+  "description": "tes22t",
+  "is_active": true
+}
+###
