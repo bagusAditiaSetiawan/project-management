@@ -13,7 +13,6 @@ import (
 func NewConnectDatabase() *gorm.DB {
 	dbHost := config.Config("DB_HOST")
 	dbUser := config.Config("DB_USER")
-	fmt.Println(dbUser)
 	dbName := config.Config("DB_NAME")
 	dbPassword := config.Config("DB_PASSWORD")
 	dbPort := config.Config("DB_PORT")
@@ -33,5 +32,6 @@ func NewConnectDatabase() *gorm.DB {
 	// Migrate the schema
 	db.AutoMigrate(&entities.User{})
 	db.AutoMigrate(&entities.Project{})
+	db.AutoMigrate(&entities.Task{})
 	return db
 }

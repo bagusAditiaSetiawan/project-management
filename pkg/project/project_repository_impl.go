@@ -1,6 +1,8 @@
 package project
 
 import (
+	"fmt"
+	"github.com/bagusAditiaSetiawan/project-management/api/exception"
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/entities"
@@ -38,7 +40,10 @@ func (repository *ProjectRepositoryImpl) Paginate(tx *gorm.DB, projectPagination
 
 func (repository *ProjectRepositoryImpl) FindById(tx *gorm.DB, id int) entities.Project {
 	project := entities.Project{}
-	tx.Where("id = ? id", id).First(&project)
+	result := tx.Where("id = ?", id).First(&project)
+	if result.Error != nil {
+		panic(exception.NewNotFoundHandler(fmt.Sprintf("Project ID %d is not found", id)))
+	}
 	return project
 }
 

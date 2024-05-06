@@ -1,9 +1,10 @@
-POST http://localhost:8080/api/project/create
+POST {{base_url}}/project/create
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
-  "name": "test22",
-  "description": "tes22t",
+  "name": "Project 1234",
+  "description": "Desc Project",
   "is_active": true
 }
 ###

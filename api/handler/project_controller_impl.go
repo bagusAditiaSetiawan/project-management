@@ -27,7 +27,7 @@ func (controller *ProjectControllerImpl) Pagination(ctx *fiber.Ctx) error {
 	}
 
 	responsePagination := controller.ProjectService.Paginate(projectPagination)
-	return ctx.JSON(helpers.ToResponseProjectPagination(responsePagination))
+	return ctx.JSON(helpers.ToResponsePagination(responsePagination))
 }
 
 func (controller *ProjectControllerImpl) Create(ctx *fiber.Ctx) error {
@@ -39,4 +39,13 @@ func (controller *ProjectControllerImpl) Create(ctx *fiber.Ctx) error {
 
 	responseCreateRequest := controller.ProjectService.Create(projectCreateRequest)
 	return ctx.JSON(helpers.ToCreatedResponse(responseCreateRequest))
+}
+func (controller *ProjectControllerImpl) Detail(ctx *fiber.Ctx) error {
+	id, err := ctx.ParamsInt("id")
+	if err != nil {
+		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
+	}
+
+	responseCreateRequest := controller.ProjectService.FindById(id)
+	return ctx.JSON(helpers.ToReadResponse(responseCreateRequest))
 }

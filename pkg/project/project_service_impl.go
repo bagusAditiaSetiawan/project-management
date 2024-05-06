@@ -48,3 +48,12 @@ func (service *ProjectServiceImpl) Paginate(request *presenter.ProjectPagination
 	defer helpers.RollbackOrCommitDb(tx)
 	return paginationResponse
 }
+
+func (service *ProjectServiceImpl) FindById(id int) entities.Project {
+	tx := service.DB.Begin()
+
+	project := service.ProjectRepository.FindById(tx, id)
+	defer helpers.RollbackOrCommitDb(tx)
+	return project
+
+}

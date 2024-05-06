@@ -5,10 +5,10 @@ import (
 	"net/http"
 )
 
-func ToResponsePagination(response presenter.PaginationResponse) *presenter.WebResponse {
+func ToReadResponse(data interface{}) *presenter.WebResponse {
 	return &presenter.WebResponse{
 		Code:   http.StatusOK,
 		Status: "OK",
-		Data:   response,
+		Data:   data,
 	}
 }

@@ -1,9 +1,3 @@
-POST {{base_url}}/project/list
+GET {{base_url}}/project/10
 Authorization: Bearer {{access_token}}
 Content-Type: application/json
-
-{
-  "limit": 10,
-  "page": 1
-}
-###
