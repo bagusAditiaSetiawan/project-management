@@ -33,6 +33,8 @@ var projectSet = wire.NewSet(project.NewProjectRepositoryImpl,
 )
 var taskSet = wire.NewSet(task.NewTaskRepositoryImpl,
 	wire.Bind(new(task.TaskRepository), new(*task.TaskRepositoryImpl)),
+	project.NewProjectRepositoryImpl,
+	wire.Bind(new(project.ProjectRepository), new(*project.ProjectRepositoryImpl)),
 	task.NewTaskServiceImpl,
 	wire.Bind(new(task.TaskService), new(*task.TaskServiceImpl)),
 	NewTaskControllerImpl,

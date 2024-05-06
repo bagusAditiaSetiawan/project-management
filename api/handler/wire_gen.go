@@ -35,7 +35,8 @@ func InitializeProjectController(db *gorm.DB, validate *validator.Validate) *Pro
 
 func InitializeTaskController(db *gorm.DB, validate *validator.Validate) *TaskControllerImpl {
 	taskRepositoryImpl := task.NewTaskRepositoryImpl()
-	taskServiceImpl := task.NewTaskServiceImpl(db, validate, taskRepositoryImpl)
+	projectRepositoryImpl := project.NewProjectRepositoryImpl()
+	taskServiceImpl := task.NewTaskServiceImpl(db, validate, taskRepositoryImpl, projectRepositoryImpl)
 	taskControllerImpl := NewTaskControllerImpl(taskServiceImpl)
 	return taskControllerImpl
 }
@@ -46,4 +47,4 @@ var authSet = wire.NewSet(auth.NewUserRepositoryImpl, wire.Bind(new(auth.UserRep
 
 var projectSet = wire.NewSet(project.NewProjectRepositoryImpl, wire.Bind(new(project.ProjectRepository), new(*project.ProjectRepositoryImpl)), project.NewProjectServiceImpl, wire.Bind(new(project.ProjectService), new(*project.ProjectServiceImpl)), NewProjectControllerImpl, wire.Bind(new(ProjectController), new(*ProjectControllerImpl)))
 
-var taskSet = wire.NewSet(task.NewTaskRepositoryImpl, wire.Bind(new(task.TaskRepository), new(*task.TaskRepositoryImpl)), task.NewTaskServiceImpl, wire.Bind(new(task.TaskService), new(*task.TaskServiceImpl)), NewTaskControllerImpl, wire.Bind(new(TaskController), new(*TaskControllerImpl)))
+var taskSet = wire.NewSet(task.NewTaskRepositoryImpl, wire.Bind(new(task.TaskRepository), new(*task.TaskRepositoryImpl)), project.NewProjectRepositoryImpl, wire.Bind(new(project.ProjectRepository), new(*project.ProjectRepositoryImpl)), task.NewTaskServiceImpl, wire.Bind(new(task.TaskService), new(*task.TaskServiceImpl)), NewTaskControllerImpl, wire.Bind(new(TaskController), new(*TaskControllerImpl)))
