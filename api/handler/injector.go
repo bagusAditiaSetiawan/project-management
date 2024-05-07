@@ -7,6 +7,7 @@ import (
 	"github.com/bagusAditiaSetiawan/project-management/pkg/auth"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/project"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/task"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/task_people"
 	"github.com/go-playground/validator/v10"
 	"github.com/google/wire"
 	"gorm.io/gorm"
@@ -52,5 +53,22 @@ func InitializeProjectController(db *gorm.DB, validate *validator.Validate) *Pro
 }
 func InitializeTaskController(db *gorm.DB, validate *validator.Validate) *TaskControllerImpl {
 	wire.Build(taskSet)
+	return nil
+}
+
+var taskPeopleSet = wire.NewSet(task_people.NewTaskPeopleRepositoryImpl,
+	wire.Bind(new(task_people.TaskPeopleRepository), new(*task_people.TaskPeopleRepositoryImpl)),
+	task.NewTaskRepositoryImpl,
+	wire.Bind(new(task.TaskRepository), new(*task.TaskRepositoryImpl)),
+	task_people.NewTaskPeopleServiceImpl,
+	wire.Bind(new(task_people.TaskPeopleService), new(*task_people.TaskPeopleServiceImpl)),
+	auth.NewUserRepositoryImpl,
+	wire.Bind(new(auth.UserRepository), new(*auth.UserRepositoryImpl)),
+	NewTaskPeopleController,
+	wire.Bind(new(TaskPeopleController), new(*TaskPeopleControllerImpl)),
+)
+
+func InitializeTaskPeopleController(db *gorm.DB, validate *validator.Validate) *TaskPeopleControllerImpl {
+	wire.Build(taskPeopleSet)
 	return nil
 }

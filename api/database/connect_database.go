@@ -25,7 +25,11 @@ func NewConnectDatabase() *gorm.DB {
 		dbPort,
 		dbSslMode,
 	)
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+	configPostgres := postgres.Config{
+		DSN: dsn,
+	}
+
+	db, err := gorm.Open(postgres.New(configPostgres), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Silent),
 	})
 	helpers.IfPanicHelper(err)
@@ -33,5 +37,6 @@ func NewConnectDatabase() *gorm.DB {
 	db.AutoMigrate(&entities.User{})
 	db.AutoMigrate(&entities.Project{})
 	db.AutoMigrate(&entities.Task{})
+	db.AutoMigrate(&entities.TaskPeople{})
 	return db
 }

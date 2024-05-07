@@ -11,6 +11,7 @@ import (
 func NewTaskRoute(app fiber.Router, db *gorm.DB, validation *validator.Validate) fiber.Router {
 	taskController := handler.InitializeTaskController(db, validation)
 	app.Post("/task/list", middleware.Protected(), taskController.TaskPagination)
+	app.Get("/task/detail/:id", middleware.Protected(), taskController.TaskDetail)
 	app.Post("/task/create", middleware.Protected(), taskController.TaskCreate)
 	return app
 }

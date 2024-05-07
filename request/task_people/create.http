@@ -1,0 +1,10 @@
+POST {{base_url}}/task-people/create
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
+
+{
+  "role": "REPORTER",
+  "task_id": 5,
+  "user_id": 1
+}
+###

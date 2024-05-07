@@ -36,3 +36,12 @@ func (controller TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
 	taskResponse := controller.TaskService.Create(taskCreateRequest)
 	return ctx.JSON(helpers.ToCreatedResponse(taskResponse))
 }
+
+func (controller TaskControllerImpl) TaskDetail(ctx *fiber.Ctx) error {
+	id, err := ctx.ParamsInt("id")
+	if err != nil {
+		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
+	}
+	taskData := controller.TaskService.FindById(id)
+	return ctx.JSON(helpers.ToCreatedResponse(taskData))
+}

@@ -31,9 +31,7 @@ func NewServe() *fiber.App {
 	db := database.NewConnectDatabase()
 	routes.NewRouteHealth(app)
 	routeApi := routes.NewGroupRoute(app)
-	routes.NewRouteAuth(routeApi, db, validation)
-	routes.NewRouteProject(routeApi, db, validation)
-	routes.NewTaskRoute(routeApi, db, validation)
+	routes.NewSetupRoute(routeApi, db, validation)
 	return app
 }
 
