@@ -2,6 +2,8 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
+	"github.com/bagusAditiaSetiawan/project-management/api/config"
 	"github.com/bagusAditiaSetiawan/project-management/api/database"
 	"github.com/bagusAditiaSetiawan/project-management/api/exception"
 	"github.com/bagusAditiaSetiawan/project-management/api/routes"
@@ -37,5 +39,5 @@ func NewServe() *fiber.App {
 
 func main() {
 	app := NewServe()
-	app.Listen(":8080")
+	app.Listen(fmt.Sprintf(":%s", config.Config("PORT")))
 }
