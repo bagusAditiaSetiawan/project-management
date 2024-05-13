@@ -2,19 +2,20 @@ package handler
 
 import (
 	"github.com/bagusAditiaSetiawan/project-management/api/exception"
-	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/task"
 	"github.com/gofiber/fiber/v2"
 )
 
 type TaskControllerImpl struct {
-	TaskService task.TaskService
+	TaskService          task.TaskService
+	TaskTransformService task.TaskTransformService
 }
 
-func NewTaskControllerImpl(taskService task.TaskService) *TaskControllerImpl {
+func NewTaskControllerImpl(taskService task.TaskService, taskTransformService task.TaskTransformService) *TaskControllerImpl {
 	return &TaskControllerImpl{
-		TaskService: taskService,
+		TaskService:          taskService,
+		TaskTransformService: taskTransformService,
 	}
 }
 
@@ -25,7 +26,7 @@ func (controller TaskControllerImpl) TaskPagination(ctx *fiber.Ctx) error {
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
 	}
 	responsePagination := controller.TaskService.Paginate(taskPagination)
-	return ctx.JSON(helpers.ToResponsePagination(responsePagination))
+	return ctx.JSON(controller.TaskTransformService.PaginateTask(responsePagination))
 }
 
 func (controller TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
@@ -34,7 +35,7 @@ func (controller TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
 	}
 	taskResponse := controller.TaskService.Create(taskCreateRequest)
-	return ctx.JSON(helpers.ToCreatedResponse(taskResponse))
+	return ctx.Status(fiber.StatusCreated).JSON(controller.TaskTransformService.CreateTask(taskResponse))
 }
 
 func (controller TaskControllerImpl) TaskDetail(ctx *fiber.Ctx) error {
@@ -43,5 +44,5 @@ func (controller TaskControllerImpl) TaskDetail(ctx *fiber.Ctx) error {
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
 	}
 	taskData := controller.TaskService.FindById(id)
-	return ctx.JSON(helpers.ToCreatedResponse(taskData))
+	return ctx.JSON(controller.TaskTransformService.DetailTask(taskData))
 }

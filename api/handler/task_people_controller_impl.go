@@ -25,5 +25,5 @@ func (controller TaskPeopleControllerImpl) TaskPeopleCreate(ctx *fiber.Ctx) erro
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
 	}
 	taskPeopleResponse := controller.TaskPeopleService.Create(request)
-	return ctx.JSON(helpers.ToCreatedResponse(taskPeopleResponse))
+	return ctx.Status(fiber.StatusCreated).JSON(helpers.ToCreatedResponse(taskPeopleResponse))
 }

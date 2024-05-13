@@ -7,4 +7,5 @@ import (
 
 type TaskPeopleService interface {
 	Create(request *presenter.TaskPeopleCreateRequest) entities.TaskPeople
+	Paginate(request *presenter.TaskPeoplePaginationRequest) presenter.PaginationResponse
 }

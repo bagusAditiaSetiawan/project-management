@@ -55,7 +55,7 @@ func (repository *TaskRepositoryImpl) Create(tx *gorm.DB, request *presenter.Tas
 
 func (repository *TaskRepositoryImpl) FindById(tx *gorm.DB, id int) entities.Task {
 	task := entities.Task{}
-	result := tx.Where("id = ? ", id).Preload("Project").First(&task)
+	result := tx.Where("id = ? ", id).Preload("TaskPeoples").Preload("TaskPeoples.User").Preload("Project").First(&task)
 	if result.Error != nil {
 		panic(exception.NewNotFoundHandler(fmt.Sprintf("Tasks ID  %d is not found", id)))
 	}

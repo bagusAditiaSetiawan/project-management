@@ -22,4 +22,5 @@ type Task struct {
 	Name        string      `gorm:"size:255" json:"name"`
 	Description string      `json:"description"`
 	Status      StatusTasks `gorm:"size:100" json:"status"`
+	TaskPeoples []TaskPeople
 }

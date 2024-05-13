@@ -45,3 +45,12 @@ func (service *TaskPeopleServiceImpl) Create(request *presenter.TaskPeopleCreate
 	defer helpers.RollbackOrCommitDb(tx)
 	return taskPeople
 }
+
+func (service *TaskPeopleServiceImpl) Paginate(request *presenter.TaskPeoplePaginationRequest) presenter.PaginationResponse {
+	err := service.Validation.Struct(request)
+	helpers.IfPanicHelper(err)
+	tx := service.DB.Begin()
+	taskPeopleResponse := service.TaskPeopleRepository.Paginate(tx, request)
+	helpers.RollbackOrCommitDb(tx)
+	return taskPeopleResponse
+}

@@ -1,5 +1,0 @@
-{
-  "code": 400,
-  "status": "Bad Request",
-  "data": "Username or Email is already exist"
-}

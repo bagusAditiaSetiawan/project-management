@@ -40,7 +40,7 @@ func (repository *ProjectRepositoryImpl) Paginate(tx *gorm.DB, projectPagination
 
 func (repository *ProjectRepositoryImpl) FindById(tx *gorm.DB, id int) entities.Project {
 	project := entities.Project{}
-	result := tx.Where("id = ?", id).First(&project)
+	result := tx.Where("id = ?", id).Preload("Tasks").First(&project)
 	if result.Error != nil {
 		panic(exception.NewNotFoundHandler(fmt.Sprintf("Project ID %d is not found", id)))
 	}
