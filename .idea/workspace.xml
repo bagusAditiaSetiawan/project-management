@@ -5,51 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="655a8c98-77b5-43ab-b7eb-b925267687d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/presenter/task_people_pagination_request.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/auth/user_transform_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/auth/user_transform_service_impl.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/project/project_transform_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/project/project_transform_service_impl.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/task/task_transform_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pkg/task/task_transform_service_impl.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request/health/check.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/request/health/monitor.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164042.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164051.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164055.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164110.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164115.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164119.400.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164123.500.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164503.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164507.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164511.200.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2024-05-06T164519.404.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/handler/file_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/handler/file_controller_impl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws/aws_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service_impl.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/auth_controller_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/auth_controller_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/injector.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/injector.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/project_controller_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/project_controller_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/task_controller_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/task_controller_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/task_people_controller_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/task_people_controller_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/handler/wire_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/wire_gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/helpers/custom_validation_error_helper.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/helpers/custom_validation_error_helper.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/helpers/to_response_bad_request.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/helpers/to_response_login_response.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/helpers/to_response_register_response.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/entities/project.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/entities/project.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/entities/task.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/entities/task.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/project/project_repository_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/project/project_repository_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/task/task_repository_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task/task_repository_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/task_people/task_people_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task_people/task_people_repository.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/task_people/task_people_repository_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task_people/task_people_repository_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/task_people/task_people_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task_people/task_people_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/task_people/task_people_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task_people/task_people_service_impl.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request/http-client.private.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/request/http-client.private.env.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request/project/project_detail.http" beforeDir="false" afterPath="$PROJECT_DIR$/request/project/project_detail.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request/task/create.http" beforeDir="false" afterPath="$PROJECT_DIR$/request/task/create.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request/task/detail.http" beforeDir="false" afterPath="$PROJECT_DIR$/request/task/detail.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/request/task_people/create.http" beforeDir="false" afterPath="$PROJECT_DIR$/request/task_people/create.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,8 +83,11 @@
       <recent name="C:\Users\bradi\GolandProjects\project-management\api\routes" />
       <recent name="C:\Users\bradi\GolandProjects\project-management\pkg\entities" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bradi\GolandProjects\project-management\pkg" />
+    </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.create | #1 (1)">
+  <component name="RunManager" selected="Go Build.go build github.com/bagusAditiaSetiawan/project-management">
     <configuration name="go build github.com/bagusAditiaSetiawan/project-management" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="project-management" />
       <working_directory value="$PROJECT_DIR$" />
@@ -152,11 +118,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build github.com/bagusAditiaSetiawan/project-management" />
         <item itemvalue="HTTP Request.create | #1 (1)" />
         <item itemvalue="HTTP Request.detail | #1" />
         <item itemvalue="HTTP Request.list | #1" />
         <item itemvalue="HTTP Request.login | #1" />
-        <item itemvalue="Go Build.go build github.com/bagusAditiaSetiawan/project-management" />
       </list>
     </recent_temporary>
   </component>
