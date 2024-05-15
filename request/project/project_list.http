@@ -1,8 +1,9 @@
-POST http://localhost:8080/api/project/list
+POST {{base_url}}/project/list
+Authorization: Bearer {{access_token}}
 Content-Type: application/json
 
 {
-  "page": 3,
-  "limit": 2
+  "limit": 10,
+  "page": 1
 }
 ###

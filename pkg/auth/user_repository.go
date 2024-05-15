@@ -10,4 +10,5 @@ type UserRepository interface {
 	Register(tx *gorm.DB, user *presenter.RegisterUserRequest) (entities.User, error)
 	FindByEmailUsername(tx *gorm.DB, email string, username string) entities.User
 	FindById(tx *gorm.DB, id int) entities.User
+	FindByIdOrFail(tx *gorm.DB, id int) entities.User
 }

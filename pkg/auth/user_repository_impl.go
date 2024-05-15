@@ -2,6 +2,7 @@ package auth
 
 import (
 	"errors"
+	"fmt"
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/entities"
@@ -40,5 +41,13 @@ func (repository *UserRepositoryImpl) FindByEmailUsername(tx *gorm.DB, email str
 func (repository *UserRepositoryImpl) FindById(tx *gorm.DB, id int) entities.User {
 	user := entities.User{}
 	tx.Where("id = ?", id).First(&user)
+	return user
+}
+func (repository *UserRepositoryImpl) FindByIdOrFail(tx *gorm.DB, id int) entities.User {
+	user := entities.User{}
+	result := tx.Where("id = ?", id).First(&user)
+	if result.Error != nil {
+		panic(fmt.Sprintf("User ID %d is not found", id))
+	}
 	return user
 }

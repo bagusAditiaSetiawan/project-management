@@ -8,12 +8,12 @@ import (
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+	"time"
 )
 
 func NewConnectDatabase() *gorm.DB {
 	dbHost := config.Config("DB_HOST")
 	dbUser := config.Config("DB_USER")
-	fmt.Println(dbUser)
 	dbName := config.Config("DB_NAME")
 	dbPassword := config.Config("DB_PASSWORD")
 	dbPort := config.Config("DB_PORT")
@@ -26,12 +26,27 @@ func NewConnectDatabase() *gorm.DB {
 		dbPort,
 		dbSslMode,
 	)
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+	configPostgres := postgres.Config{
+		DSN: dsn,
+	}
+
+	db, err := gorm.Open(postgres.New(configPostgres), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Silent),
 	})
 	helpers.IfPanicHelper(err)
+
+	sql, err := db.DB()
+	helpers.IfPanicHelper(err)
+	sql.SetMaxIdleConns(5)
+	sql.SetMaxOpenConns(10)
+
+	sql.SetConnMaxIdleTime(10 * time.Minute)
+	sql.SetConnMaxLifetime(60 * time.Minute)
+
 	// Migrate the schema
 	db.AutoMigrate(&entities.User{})
 	db.AutoMigrate(&entities.Project{})
+	db.AutoMigrate(&entities.Task{})
+	db.AutoMigrate(&entities.TaskPeople{})
 	return db
 }

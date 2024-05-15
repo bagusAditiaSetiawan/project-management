@@ -8,4 +8,5 @@ import (
 type ProjectService interface {
 	Create(request *presenter.ProjectCreateRequest) entities.Project
 	Paginate(request *presenter.ProjectPaginationRequest) presenter.PaginationResponse
+	FindById(id int) entities.Project
 }

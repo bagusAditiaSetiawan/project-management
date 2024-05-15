@@ -1,0 +1,3 @@
+GET {{base_url}}/project/1
+Authorization: Bearer {{access_token}}
+Content-Type: application/json

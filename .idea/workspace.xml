@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="655a8c98-77b5-43ab-b7eb-b925267687d6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api/handler/file_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/handler/file_controller_impl.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws/aws_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTTP Request" />
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file://$PROJECT_DIR$/../../../../Program Files/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/request/task/list.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/task/detail.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/task/create.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/auth/login.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/auth/register.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/task_people/create.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/project/project_list.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/health/check.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/health/monitor.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/project/project_create.http" environment="dev" />
+    <file url="file://$PROJECT_DIR$/request/project/project_detail.http" environment="dev" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2g5Wg1tNUlhltT06dtjGLYxx2JE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build github.com/bagusAditiaSetiawan/project-management.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/bradi/GolandProjects/project-management/api/presenter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "rest.client.default.execution.environment": "dev"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bradi\GolandProjects\project-management\api\presenter" />
+      <recent name="C:\Users\bradi\GolandProjects\project-management\request\health" />
+      <recent name="C:\Users\bradi\GolandProjects\project-management\request\task_people" />
+      <recent name="C:\Users\bradi\GolandProjects\project-management\api\routes" />
+      <recent name="C:\Users\bradi\GolandProjects\project-management\pkg\entities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bradi\GolandProjects\project-management\pkg" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build github.com/bagusAditiaSetiawan/project-management">
+    <configuration name="go build github.com/bagusAditiaSetiawan/project-management" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="project-management" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/bagusAditiaSetiawan/project-management" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="create | #1 (1)" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/task_people/create.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="detail | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/task/detail.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="list | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/task/list.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="login | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/request/auth/login.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build github.com/bagusAditiaSetiawan/project-management" />
+      <item itemvalue="HTTP Request.create | #1 (1)" />
+      <item itemvalue="HTTP Request.login | #1" />
+      <item itemvalue="HTTP Request.list | #1" />
+      <item itemvalue="HTTP Request.detail | #1" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/bagusAditiaSetiawan/project-management" />
+        <item itemvalue="HTTP Request.create | #1 (1)" />
+        <item itemvalue="HTTP Request.detail | #1" />
+        <item itemvalue="HTTP Request.list | #1" />
+        <item itemvalue="HTTP Request.login | #1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <settings-migrated>true</settings-migrated>
+  </component>
+</project>

@@ -3,7 +3,6 @@ package handler
 import (
 	"fmt"
 	"github.com/bagusAditiaSetiawan/project-management/api/exception"
-	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/auth"
 	"github.com/gofiber/fiber/v2"
@@ -11,12 +10,14 @@ import (
 )
 
 type AuthControllerImpl struct {
-	UserService auth.UserService
+	UserService          auth.UserService
+	UserTransformService auth.UserTransformService
 }
 
-func NewAuthControllerImpl(userService auth.UserService) *AuthControllerImpl {
+func NewAuthControllerImpl(userService auth.UserService, userTransformService auth.UserTransformService) *AuthControllerImpl {
 	return &AuthControllerImpl{
-		UserService: userService,
+		UserService:          userService,
+		UserTransformService: userTransformService,
 	}
 }
 
@@ -29,7 +30,7 @@ func (controller *AuthControllerImpl) Register(ctx *fiber.Ctx) error {
 
 	register := controller.UserService.Register(registerUserRequest)
 
-	return ctx.JSON(helpers.ToResponseRegisterResponse(register))
+	return ctx.Status(fiber.StatusCreated).JSON(controller.UserTransformService.ToResponseRegisterResponse(register))
 }
 
 func (controller *AuthControllerImpl) Login(ctx *fiber.Ctx) error {
@@ -41,7 +42,7 @@ func (controller *AuthControllerImpl) Login(ctx *fiber.Ctx) error {
 
 	accessToken := controller.UserService.Login(loginRequest)
 
-	return ctx.JSON(helpers.ToResponseLoginResponse(accessToken))
+	return ctx.JSON(controller.UserTransformService.ToResponseLoginResponse(accessToken))
 }
 
 func (controller *AuthControllerImpl) Profile(ctx *fiber.Ctx) error {

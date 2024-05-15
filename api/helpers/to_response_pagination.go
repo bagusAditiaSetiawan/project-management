@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func ToResponseProjectPagination(response presenter.PaginationResponse) *presenter.WebResponse {
+func ToResponsePagination(response presenter.PaginationResponse) *presenter.WebResponse {
 	return &presenter.WebResponse{
 		Code:   http.StatusOK,
 		Status: "OK",

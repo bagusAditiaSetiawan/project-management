@@ -1,8 +1,11 @@
-POST http://localhost:8080/api/login
+POST {{base_url}}/login
 Content-Type: application/json
 
 {
   "username": "braditya12@gmail.com",
   "password": "bagus03220299"
 }
-###
+
+> {%
+    client.global.set("access_token", response.body.data.access_token)
+%}

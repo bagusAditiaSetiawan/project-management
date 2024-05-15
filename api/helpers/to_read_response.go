@@ -5,10 +5,10 @@ import (
 	"net/http"
 )
 
-func ToResponseBadRequest(message string) *presenter.WebResponse {
+func ToReadResponse(data interface{}) *presenter.WebResponse {
 	return &presenter.WebResponse{
-		Code:   http.StatusCreated,
-		Status: "Created",
-		Data:   message,
+		Code:   http.StatusOK,
+		Status: "OK",
+		Data:   data,
 	}
 }

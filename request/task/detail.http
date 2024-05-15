@@ -1,0 +1,3 @@
+GET {{base_url}}/task/detail/7
+Authorization: Bearer {{access_token}}
+Content-Type: application/json
