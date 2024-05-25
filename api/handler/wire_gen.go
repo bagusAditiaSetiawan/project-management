@@ -9,6 +9,7 @@ package handler
 import (
 	"github.com/bagusAditiaSetiawan/project-management/pkg/auth"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/aws"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_cloudwatch"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_s3"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/project"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/task"
@@ -20,43 +21,43 @@ import (
 
 // Injectors from injector.go:
 
-func InitializeAuthController(db *gorm.DB, validate *validator.Validate) *AuthControllerImpl {
+func InitializeAuthController(db *gorm.DB, validate *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *AuthControllerImpl {
 	userRepositoryImpl := auth.NewUserRepositoryImpl()
 	passwordServiceImpl := auth.NewPasswordServiceImpl()
 	jwtServiceImpl := auth.NewJwtServiceImpl()
-	userServiceImpl := auth.NewUserServiceImpl(db, userRepositoryImpl, validate, passwordServiceImpl, jwtServiceImpl)
+	userServiceImpl := auth.NewUserServiceImpl(db, userRepositoryImpl, validate, passwordServiceImpl, jwtServiceImpl, logger)
 	userTransformServiceImpl := auth.NewUserTransformServiceImpl()
 	authControllerImpl := NewAuthControllerImpl(userServiceImpl, userTransformServiceImpl)
 	return authControllerImpl
 }
 
-func InitializeProjectController(db *gorm.DB, validate *validator.Validate) *ProjectControllerImpl {
+func InitializeProjectController(db *gorm.DB, validate *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *ProjectControllerImpl {
 	projectRepositoryImpl := project.NewProjectRepositoryImpl()
-	projectServiceImpl := project.NewProjectServiceImpl(db, projectRepositoryImpl, validate)
+	projectServiceImpl := project.NewProjectServiceImpl(db, projectRepositoryImpl, validate, logger)
 	projectTransformServiceImpl := project.NewProjectTransformServiceImpl()
 	projectControllerImpl := NewProjectControllerImpl(projectServiceImpl, projectTransformServiceImpl)
 	return projectControllerImpl
 }
 
-func InitializeTaskController(db *gorm.DB, validate *validator.Validate) *TaskControllerImpl {
+func InitializeTaskController(db *gorm.DB, validate *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *TaskControllerImpl {
 	taskRepositoryImpl := task.NewTaskRepositoryImpl()
 	projectRepositoryImpl := project.NewProjectRepositoryImpl()
-	taskServiceImpl := task.NewTaskServiceImpl(db, validate, taskRepositoryImpl, projectRepositoryImpl)
+	taskServiceImpl := task.NewTaskServiceImpl(db, validate, taskRepositoryImpl, projectRepositoryImpl, logger)
 	taskTransformServiceImpl := task.NewTaskTransformServiceImpl()
 	taskControllerImpl := NewTaskControllerImpl(taskServiceImpl, taskTransformServiceImpl)
 	return taskControllerImpl
 }
 
-func InitializeTaskPeopleController(db *gorm.DB, validate *validator.Validate) *TaskPeopleControllerImpl {
+func InitializeTaskPeopleController(db *gorm.DB, validate *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *TaskPeopleControllerImpl {
 	userRepositoryImpl := auth.NewUserRepositoryImpl()
 	taskPeopleRepositoryImpl := task_people.NewTaskPeopleRepositoryImpl()
 	taskRepositoryImpl := task.NewTaskRepositoryImpl()
-	taskPeopleServiceImpl := task_people.NewTaskPeopleServiceImpl(db, userRepositoryImpl, taskPeopleRepositoryImpl, taskRepositoryImpl, validate)
+	taskPeopleServiceImpl := task_people.NewTaskPeopleServiceImpl(db, userRepositoryImpl, taskPeopleRepositoryImpl, taskRepositoryImpl, validate, logger)
 	taskPeopleControllerImpl := NewTaskPeopleController(taskPeopleServiceImpl)
 	return taskPeopleControllerImpl
 }
 
-func InitializeFileController(db *gorm.DB, validate *validator.Validate) *FileControllerImpl {
+func InitializeFileController(db *gorm.DB, validate *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *FileControllerImpl {
 	session := aws.NewAwsSessionService()
 	s3 := aws_s3.NewS3Service(session)
 	awsS3ServiceImpl := aws_s3.NewAwsS3ServiceImpl(s3)

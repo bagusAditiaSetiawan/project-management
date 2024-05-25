@@ -1,3 +1,163 @@
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T184132.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T183944.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T183658.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T162905.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T162624.500.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T161820.500.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T161750.500.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T161703.500.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T161643.500.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-25T161537.500.json
+
+###
+
 POST http://localhost:8080/api/task-people/create
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
 Content-Type: application/json
@@ -559,133 +719,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2024-05-09T123220.500.json
-
-###
-
-POST http://localhost:8080/api/task-people/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 49
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "role": "s",
-  "task_id": 7,
-  "user_id": 1
-}
-
-<> 2024-05-09T121030.400.json
-
-###
-
-POST http://localhost:8080/api/task-people/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 49
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "role": "s",
-  "task_id": 7,
-  "user_id": 1
-}
-
-<> 2024-05-09T120949.400.json
-
-###
-
-GET http://localhost:8080/monitor
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120438.200.json
-
-###
-
-GET http://localhost:8080
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120423.200.json
-
-###
-
-GET http://localhost:8080/api
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120338.404.json
-
-###
-
-GET http://localhost:8080/api/health
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120328.404.json
-
-###
-
-GET http://localhost:8080/api/health
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120326.404.json
-
-###
-
-POST http://localhost:8080/api/health
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120322.404.json
-
-###
-
-POST http://localhost:8080/api/health
-Content-Type: application/json
-Content-Length: 0
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T120321.404.json
-
-###
-
-POST http://localhost:8080/api/task/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 94
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "project_id": 5,
-  "name": "Tasks",
-  "description": "Desc Task",
-  "status": "PLANNING"
-}
-
-<> 2024-05-09T095420-5.200.json
 
 ###
 

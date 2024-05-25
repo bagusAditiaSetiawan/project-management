@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="655a8c98-77b5-43ab-b7eb-b925267687d6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_cloudwatch/aws_cloudwatch_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pkg/aws_cloudwatch/aws_cloudwatch_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pkg/aws/aws_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/aws/aws_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handler/injector.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/injector.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/handler/wire_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/handler/wire_gen.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/auth_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/auth_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/file_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/file_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/project_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/project_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/setup_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/setup_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/task_people_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/task_people_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/task_route.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/task_route.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/auth/user_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/auth/user_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/aws_s3/aws_s3_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/project/project_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/project/project_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/task/task_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task/task_service_impl.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pkg/task_people/task_people_service_impl.go" beforeDir="false" afterPath="$PROJECT_DIR$/pkg/task_people/task_people_service_impl.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,27 +67,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
-    &quot;Go Build.go build github.com/bagusAditiaSetiawan/project-management.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.automatic.dependencies.download&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;go.sdk.automatically.set&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bradi/GolandProjects/project-management/api/presenter&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build github.com/bagusAditiaSetiawan/project-management.executor": "Run",
+    "HTTP Request.login | #1.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.automatic.dependencies.download": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "go.import.settings.migrated": "true",
+    "go.sdk.automatically.set": "true",
+    "last_opened_file_path": "C:/Users/bradi/GolandProjects/project-management/api/presenter",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rest.client.default.execution.environment": "dev"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\bradi\GolandProjects\project-management\api\presenter" />
@@ -86,7 +101,7 @@
       <recent name="C:\Users\bradi\GolandProjects\project-management\pkg" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build github.com/bagusAditiaSetiawan/project-management">
+  <component name="RunManager" selected="HTTP Request.login | #1">
     <configuration name="go build github.com/bagusAditiaSetiawan/project-management" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="project-management" />
       <working_directory value="$PROJECT_DIR$" />
@@ -117,11 +132,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.login | #1" />
         <item itemvalue="Go Build.go build github.com/bagusAditiaSetiawan/project-management" />
         <item itemvalue="HTTP Request.create | #1 (1)" />
         <item itemvalue="HTTP Request.detail | #1" />
         <item itemvalue="HTTP Request.list | #1" />
-        <item itemvalue="HTTP Request.login | #1" />
       </list>
     </recent_temporary>
   </component>

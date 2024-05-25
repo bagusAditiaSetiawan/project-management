@@ -38,3 +38,13 @@ func (service *AwsS3ServiceImpl) UploadS3(file *multipart.FileHeader) string {
 	helpers.IfPanicHelper(err)
 	return filename
 }
+
+func (service *AwsS3ServiceImpl) createUrl(fileName string) string {
+	req, _ := service.S3Service.GetObjectRequest(&s3.GetObjectInput{
+		Bucket: aws.String(config.Config("AWS_S3_BUCKET")),
+		Key:    aws.String(fileName),
+	})
+	url, err := req.Presign(15 * time.Minute)
+	helpers.IfPanicHelper(err)
+	return url
+}

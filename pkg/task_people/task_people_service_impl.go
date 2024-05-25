@@ -4,6 +4,7 @@ import (
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/auth"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_cloudwatch"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/entities"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/task"
 	"github.com/go-playground/validator/v10"
@@ -16,15 +17,17 @@ type TaskPeopleServiceImpl struct {
 	TaskPeopleRepository TaskPeopleRepository
 	TaskRepository       task.TaskRepository
 	Validation           *validator.Validate
+	Logger               *aws_cloudwatch.AwsCloudWatchServiceImpl
 }
 
-func NewTaskPeopleServiceImpl(db *gorm.DB, userRepository auth.UserRepository, taskPeopleRepository TaskPeopleRepository, taskRepository task.TaskRepository, validation *validator.Validate) *TaskPeopleServiceImpl {
+func NewTaskPeopleServiceImpl(db *gorm.DB, userRepository auth.UserRepository, taskPeopleRepository TaskPeopleRepository, taskRepository task.TaskRepository, validation *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *TaskPeopleServiceImpl {
 	return &TaskPeopleServiceImpl{
 		DB:                   db,
 		UserRepository:       userRepository,
 		TaskPeopleRepository: taskPeopleRepository,
 		TaskRepository:       taskRepository,
 		Validation:           validation,
+		Logger:               logger,
 	}
 }
 

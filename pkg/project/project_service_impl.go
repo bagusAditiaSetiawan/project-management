@@ -3,6 +3,7 @@ package project
 import (
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_cloudwatch"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/entities"
 	"github.com/go-playground/validator/v10"
 	"gorm.io/gorm"
@@ -12,13 +13,15 @@ type ProjectServiceImpl struct {
 	DB                *gorm.DB
 	ProjectRepository ProjectRepository
 	Validator         *validator.Validate
+	Logger            *aws_cloudwatch.AwsCloudWatchServiceImpl
 }
 
-func NewProjectServiceImpl(db *gorm.DB, projectRepository ProjectRepository, validator *validator.Validate) *ProjectServiceImpl {
+func NewProjectServiceImpl(db *gorm.DB, projectRepository ProjectRepository, validator *validator.Validate, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *ProjectServiceImpl {
 	return &ProjectServiceImpl{
 		DB:                db,
 		ProjectRepository: projectRepository,
 		Validator:         validator,
+		Logger:            logger,
 	}
 }
 

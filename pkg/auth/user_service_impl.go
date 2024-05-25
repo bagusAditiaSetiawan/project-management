@@ -4,6 +4,7 @@ import (
 	"github.com/bagusAditiaSetiawan/project-management/api/exception"
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
 	"github.com/bagusAditiaSetiawan/project-management/api/presenter"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_cloudwatch"
 	"github.com/bagusAditiaSetiawan/project-management/pkg/entities"
 	"github.com/go-playground/validator/v10"
 	"github.com/golang-jwt/jwt/v5"
@@ -16,15 +17,17 @@ type UserServiceImpl struct {
 	Validator       *validator.Validate
 	PasswordService PasswordService
 	JwtService      JwtService
+	Logger          *aws_cloudwatch.AwsCloudWatchServiceImpl
 }
 
-func NewUserServiceImpl(db *gorm.DB, userRepository UserRepository, validator *validator.Validate, passwordService PasswordService, jwtService JwtService) *UserServiceImpl {
+func NewUserServiceImpl(db *gorm.DB, userRepository UserRepository, validator *validator.Validate, passwordService PasswordService, jwtService JwtService, logger *aws_cloudwatch.AwsCloudWatchServiceImpl) *UserServiceImpl {
 	return &UserServiceImpl{
 		DB:              db,
 		UserRepository:  userRepository,
 		Validator:       validator,
 		PasswordService: passwordService,
 		JwtService:      jwtService,
+		Logger:          logger,
 	}
 }
 
@@ -51,6 +54,8 @@ func (service *UserServiceImpl) Login(request *presenter.LoginUserRequest) strin
 	err := service.Validator.Struct(request)
 	helpers.IfPanicHelper(err)
 	tx := service.DB.Begin()
+
+	go service.Logger.SendLogInfo("Process login user", request.Username)
 
 	user := service.UserRepository.FindByEmailUsername(tx, "", request.Username)
 	if user.ID == 0 {
