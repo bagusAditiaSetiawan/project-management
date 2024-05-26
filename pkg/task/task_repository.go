@@ -10,4 +10,5 @@ type TaskRepository interface {
 	Paginate(tx *gorm.DB, request *presenter.TaskPaginationRequest) presenter.PaginationResponse
 	Create(tx *gorm.DB, request *presenter.TaskCreateRequest) entities.Task
 	FindById(tx *gorm.DB, id int) entities.Task
+	UpdateStatus(tx *gorm.DB, id int, status entities.StatusTasks) entities.Task
 }

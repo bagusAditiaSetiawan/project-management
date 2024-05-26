@@ -7,6 +7,8 @@ import (
 	"github.com/bagusAditiaSetiawan/project-management/api/database"
 	"github.com/bagusAditiaSetiawan/project-management/api/exception"
 	"github.com/bagusAditiaSetiawan/project-management/api/routes"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws"
+	"github.com/bagusAditiaSetiawan/project-management/pkg/aws_cloudwatch"
 	"github.com/go-playground/validator/v10"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/recover"
@@ -33,7 +35,11 @@ func NewServe() *fiber.App {
 	db := database.NewConnectDatabase()
 	routes.NewRouteHealth(app)
 	routeApi := routes.NewGroupRoute(app)
-	routes.NewSetupRoute(routeApi, db, validation)
+	sess := aws.NewAwsSessionService()
+	awsCloudWatch := aws_cloudwatch.NewCloudWatchLogsService(sess)
+	loggerService := aws_cloudwatch.NewAwsCloudWatchServiceImpl(awsCloudWatch)
+
+	routes.NewSetupRoute(routeApi, db, validation, loggerService)
 	return app
 }
 

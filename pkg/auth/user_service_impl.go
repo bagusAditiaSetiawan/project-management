@@ -34,7 +34,7 @@ func NewUserServiceImpl(db *gorm.DB, userRepository UserRepository, validator *v
 func (service *UserServiceImpl) Register(request *presenter.RegisterUserRequest) entities.User {
 	err := service.Validator.Struct(request)
 	helpers.IfPanicHelper(err)
-
+	service.Logger.SendLogInfo("Registering user", request.Username, request.Email)
 	hashedPassword, err := service.PasswordService.Hashing(request.Password)
 	helpers.IfPanicHelper(err)
 	request.Password = hashedPassword

@@ -34,7 +34,7 @@ func NewTaskPeopleServiceImpl(db *gorm.DB, userRepository auth.UserRepository, t
 func (service *TaskPeopleServiceImpl) Create(request *presenter.TaskPeopleCreateRequest) entities.TaskPeople {
 	err := service.Validation.Struct(request)
 	helpers.IfPanicHelper(err)
-
+	service.Logger.SendLogInfo("Process create task people request", "request", request)
 	tx := service.DB.Begin()
 	service.TaskRepository.FindById(tx, request.TaskID)
 	service.UserRepository.FindByIdOrFail(tx, request.UserID)
@@ -52,6 +52,7 @@ func (service *TaskPeopleServiceImpl) Create(request *presenter.TaskPeopleCreate
 func (service *TaskPeopleServiceImpl) Paginate(request *presenter.TaskPeoplePaginationRequest) presenter.PaginationResponse {
 	err := service.Validation.Struct(request)
 	helpers.IfPanicHelper(err)
+	service.Logger.SendLogInfo("Process pagination task people request", "request", request)
 	tx := service.DB.Begin()
 	taskPeopleResponse := service.TaskPeopleRepository.Paginate(tx, request)
 	helpers.RollbackOrCommitDb(tx)

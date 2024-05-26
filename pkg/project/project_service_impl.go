@@ -28,7 +28,7 @@ func NewProjectServiceImpl(db *gorm.DB, projectRepository ProjectRepository, val
 func (service *ProjectServiceImpl) Create(request *presenter.ProjectCreateRequest) entities.Project {
 	errorValidate := service.Validator.Struct(request)
 	helpers.IfPanicHelper(errorValidate)
-
+	service.Logger.SendLogInfo("Project Create Request", request)
 	tx := service.DB.Begin()
 
 	project := entities.Project{
@@ -45,7 +45,7 @@ func (service *ProjectServiceImpl) Paginate(request *presenter.ProjectPagination
 	errorValidate := service.Validator.Struct(request)
 
 	helpers.IfPanicHelper(errorValidate)
-
+	service.Logger.SendLogInfo("Project Pagination Request", request)
 	tx := service.DB.Begin()
 	paginationResponse := service.ProjectRepository.Paginate(tx, request)
 	defer helpers.RollbackOrCommitDb(tx)
@@ -54,7 +54,7 @@ func (service *ProjectServiceImpl) Paginate(request *presenter.ProjectPagination
 
 func (service *ProjectServiceImpl) FindById(id int) entities.Project {
 	tx := service.DB.Begin()
-
+	service.Logger.SendLogInfo("Project Find Request", id)
 	project := service.ProjectRepository.FindById(tx, id)
 	defer helpers.RollbackOrCommitDb(tx)
 	return project

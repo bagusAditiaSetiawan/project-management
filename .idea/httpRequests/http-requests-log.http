@@ -10,6 +10,113 @@ Accept: */*
   "password": "bagus03220299"
 }
 
+<> 2024-05-26T123150.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-26T122747.200.txt
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-26T122159.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-26T122021.200.json
+
+###
+
+GET http://localhost:8080/monitor
+Content-Type: application/json
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+<> 2024-05-26T115430.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-26T114657.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
+<> 2024-05-26T114648.200.json
+
+###
+
+POST http://localhost:8080/api/login
+Content-Type: application/json
+Content-Length: 71
+User-Agent: IntelliJ HTTP Client/GoLand 2024.1.1
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "username": "braditya12@gmail.com",
+  "password": "bagus03220299"
+}
+
 <> 2024-05-25T184132.200.json
 
 ###
@@ -601,124 +708,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2024-05-09T125748.200.json
-
-###
-
-POST http://localhost:8080/api/project/list
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 30
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "limit": 10,
-  "page": 1
-}
-
-<> 2024-05-09T125738.200.json
-
-###
-
-GET http://localhost:8080/api/project/10
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2024-05-09T125732.200.json
-
-###
-
-POST http://localhost:8080/api/project/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 82
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Project 1234",
-  "description": "Desc Project",
-  "is_active": true
-}
-
-<> 2024-05-09T123242.500.json
-
-###
-
-POST http://localhost:8080/api/project/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 82
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Project 1234",
-  "description": "Desc Project",
-  "is_active": true
-}
-
-<> 2024-05-09T123241.500.json
-
-###
-
-POST http://localhost:8080/api/project/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 82
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Project 1234",
-  "description": "Desc Project",
-  "is_active": true
-}
-
-<> 2024-05-09T123239.500.json
-
-###
-
-POST http://localhost:8080/api/project/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 82
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Project 1234",
-  "description": "Desc Project",
-  "is_active": true
-}
-
-<> 2024-05-09T123233.500.json
-
-###
-
-POST http://localhost:8080/api/project/create
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJyYWRpdHlhMTJAZ21haWwuY29tIiwiaWQiOjF9.ydJ71Tw0NQGGJt-bWf9kNaNC3NQy6RfuqkxlFdGD1eY
-Content-Type: application/json
-Content-Length: 82
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.8.1)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "name": "Project 1234",
-  "description": "Desc Project",
-  "is_active": true
-}
-
-<> 2024-05-09T123220.500.json
 
 ###
 

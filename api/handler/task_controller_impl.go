@@ -19,7 +19,7 @@ func NewTaskControllerImpl(taskService task.TaskService, taskTransformService ta
 	}
 }
 
-func (controller TaskControllerImpl) TaskPagination(ctx *fiber.Ctx) error {
+func (controller *TaskControllerImpl) TaskPagination(ctx *fiber.Ctx) error {
 	taskPagination := new(presenter.TaskPaginationRequest)
 
 	if err := ctx.BodyParser(taskPagination); err != nil {
@@ -29,7 +29,7 @@ func (controller TaskControllerImpl) TaskPagination(ctx *fiber.Ctx) error {
 	return ctx.JSON(controller.TaskTransformService.PaginateTask(responsePagination))
 }
 
-func (controller TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
+func (controller *TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
 	taskCreateRequest := new(presenter.TaskCreateRequest)
 	if err := ctx.BodyParser(taskCreateRequest); err != nil {
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
@@ -38,11 +38,20 @@ func (controller TaskControllerImpl) TaskCreate(ctx *fiber.Ctx) error {
 	return ctx.Status(fiber.StatusCreated).JSON(controller.TaskTransformService.CreateTask(taskResponse))
 }
 
-func (controller TaskControllerImpl) TaskDetail(ctx *fiber.Ctx) error {
+func (controller *TaskControllerImpl) TaskDetail(ctx *fiber.Ctx) error {
 	id, err := ctx.ParamsInt("id")
 	if err != nil {
 		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
 	}
 	taskData := controller.TaskService.FindById(id)
+	return ctx.JSON(controller.TaskTransformService.DetailTask(taskData))
+}
+
+func (controller *TaskControllerImpl) TaskUpdateStatus(ctx *fiber.Ctx) error {
+	taskUpdateStatusRequest := new(presenter.TaskUpdateStatusRequest)
+	if err := ctx.BodyParser(taskUpdateStatusRequest); err != nil {
+		panic(exception.NewErrorBodyException("Malformed request, please check your request"))
+	}
+	taskData := controller.TaskService.UpdateStatus(taskUpdateStatusRequest)
 	return ctx.JSON(controller.TaskTransformService.DetailTask(taskData))
 }

@@ -18,7 +18,7 @@ func NewTaskPeopleController(taskPeopleService task_people.TaskPeopleService) *T
 	}
 }
 
-func (controller TaskPeopleControllerImpl) TaskPeopleCreate(ctx *fiber.Ctx) error {
+func (controller *TaskPeopleControllerImpl) TaskPeopleCreate(ctx *fiber.Ctx) error {
 	request := new(presenter.TaskPeopleCreateRequest)
 	err := ctx.BodyParser(&request)
 	if err != nil {

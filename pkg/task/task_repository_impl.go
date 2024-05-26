@@ -61,3 +61,10 @@ func (repository *TaskRepositoryImpl) FindById(tx *gorm.DB, id int) entities.Tas
 	}
 	return task
 }
+
+func (repository *TaskRepositoryImpl) UpdateStatus(tx *gorm.DB, id int, status entities.StatusTasks) entities.Task {
+	task := repository.FindById(tx, id)
+	task.Status = status
+	tx.Save(&task)
+	return task
+}

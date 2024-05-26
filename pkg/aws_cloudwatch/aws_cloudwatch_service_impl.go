@@ -7,6 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudwatchlogs"
 	"github.com/bagusAditiaSetiawan/project-management/api/config"
 	"github.com/bagusAditiaSetiawan/project-management/api/helpers"
+	"github.com/gofiber/fiber/v2/log"
 	"time"
 )
 
@@ -24,14 +25,14 @@ func NewAwsCloudWatchServiceImpl(logging *cloudwatchlogs.CloudWatchLogs) *AwsClo
 	}
 }
 
-func (service *AwsCloudWatchServiceImpl) SendLogInfo(a ...any) bool {
+func (service AwsCloudWatchServiceImpl) SendLog(flag string, a ...interface{}) bool {
 	group := config.Config("AWS_CLOUDWATCH_GROUP")
 	stream := config.Config("AWS_CLOUDWATCH_STREAM")
-	var message string
-
+	message := fmt.Sprintf("[%s] ", flag)
 	for _, item := range a {
 		message += fmt.Sprint(item) + " "
 	}
+	log.Info(message)
 
 	_, err := service.Logging.PutLogEvents(&cloudwatchlogs.PutLogEventsInput{
 		LogGroupName:  aws.String(group),
@@ -45,4 +46,8 @@ func (service *AwsCloudWatchServiceImpl) SendLogInfo(a ...any) bool {
 	})
 	helpers.IfPanicHelper(err)
 	return true
+}
+
+func (service *AwsCloudWatchServiceImpl) SendLogInfo(a ...interface{}) bool {
+	return service.SendLog("info", a...)
 }
